@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head %}
+  Business/Farms
+{% endblock head %}
+
+{% block breadcrumb %}
+
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+    <li class="breadcrumb-item active">Business/Farms</li>
+{% endblock breadcrumb %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-lg">
+        <div class="card  card-primary card-outline p-4 m-4">
+
+            <div class="card-body">
+                <div class="ml-1 mr-1 ">
+                    <form action="" method="Get" novalidate>
+                        <div class="form-row ">
+                            <div class="form-group col-12 col-sm-12 col-md-3">
+                                {{ myFilter.form.value_chain|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-12 col-sm-12 col-md-3">
+                                {{ myFilter.form.bio__sex|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-12 col-sm-12 col-md-3">
+                                {{ myFilter.form.registration_status|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-12 col-sm-12 col-md-3">
+                                {{ myFilter.form.type_ownership|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-dark">
+                                <span class="">Filter</span>
+                                <i class="fas fa-search pl-3"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="example3" class="table  table-striped table-hover" role="grid"
+                                aria-describedby="example2_info">
+                                <thead class="">
+                                    <tr role="row">
+
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending"> ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Value Chain</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Registration Status</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Scale</th>
+                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Event Type</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Event Date</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">Event Staff</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                            aria-label="CSS grade: activate to sort column ascending">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for a in total %}
+
+                                    <tr role="row" class="odd">
+                                        <td>{{ a.id}}</td>
+                                        <td>{{ a.name}}</td>
+                                        <td>
+
+                                            {{a.value_chain.name}}
+                                        </td>
+                                        <td>{{ a.registration_status}}</td>
+                                        <td>{{ a.scale}}</td>
+                                        <td>
+                                            {% if a.history_type == '~' %}
+                                                <span class="badge badge-pill badge-warning">Updated</span>
+                                                {% elif a.history_type == '-' %}
+                                                <span class="badge badge-pill badge-danger">Deleted</span>
+                                                {% else %}
+                                                <span class="badge badge-pill badge-success">Created</span>
+                                            {% endif %}
+
+                                        </td>
+                                        <td>{{ a.history_date}}</td>
+                                        <td>{{ a.history_user.profile.name}}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-outline-primary"
+                                                href="{% url 'agric:audittrail_view_business' a.history_id %}">View</a>
+
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

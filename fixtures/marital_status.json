@@ -1,0 +1,43 @@
+[
+    {
+      "model": "agric.Marital_Status",
+      "fields": {
+        "name": "Single"
+        
+      }
+    },
+    {
+        "model": "agric.Marital_Status",
+        "pk": 2,
+        "fields": {
+          "name": "Maried"
+          
+        }
+    },
+    {
+        "model": "agric.Marital_Status",
+        "pk": 3,
+        "fields": {
+          "name": "Divorce"
+          
+        }
+    },
+    {
+        "model": "agric.Marital_Status",
+        "pk": 4,
+        "fields": {
+          "name": "Widow"
+          
+        }
+    },
+    {
+        "model": "agric.Marital_Status",
+        "pk": 5,
+        "fields": {
+          "name": "Widower"
+          
+        }
+    }
+    
+    
+  ]

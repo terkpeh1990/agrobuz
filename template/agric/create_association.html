@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head %}
+   Association/FBO/LBO
+{% endblock head %}
+
+{% block breadcrumb %}
+      
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    
+    <li class="breadcrumb-item"><a href="{% url 'agric:manage_association' %}">Manage Associations</a></li>
+    <li class="breadcrumb-item active">Association/FBO/LBO</li>
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg">
+        <div class="card  card-primary card-outline p-4 m-4">
+            
+            <form role="form" method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-12">
+                            
+                            {{ form.name|as_crispy_field }}
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-4">
+                            
+                            {{ form.location|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-4">
+                           
+                            {{ form.male_members|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-4">
+                            
+                            {{ form.female_members|as_crispy_field }}
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <div class="form-group col-12 col-sm-12 col-md-6">
+                           
+                            {{ form.contact|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-6">
+                           
+                            {{ form.value_chain|as_crispy_field }}
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div class="ml-2 p-3 mt-5 d-flex justify-content-end">
+                        <button id="next-page-btn" class="btn  btn-outline-primary  px-4 btn-large"><span class="px-2">Save</span><i class="fas fa-arrow-right pr-1"></i></button>
+                        
+                      
+                      </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div> 
+{% endblock %}

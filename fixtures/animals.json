@@ -1,0 +1,68 @@
+[
+    {
+      "model": "agric.Animals",
+      "pk": 1,
+      "fields": {
+        "name": "Cattle"
+        
+      }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 2,
+        "fields": {
+          "name": "Sheep"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 3,
+        "fields": {
+          "name": "Goat"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 4,
+        "fields": {
+          "name": "Local Fowl"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 5,
+        "fields": {
+          "name": "Pigs"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 6,
+        "fields": {
+          "name": "Dogs"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 7,
+        "fields": {
+          "name": "Doves"
+          
+        }
+    },
+    {
+        "model": "agric.Animals",
+        "pk": 8,
+        "fields": {
+          "name": "Others"
+          
+        }
+    }
+
+
+  ]

@@ -1,0 +1,512 @@
+[
+    {
+      "model": "agric.Location",
+      "pk": 1,
+      "fields": {
+        "name": "Abama"
+        
+      }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 2,
+        "fields": {
+          "name": "Abotereye"
+          
+        }
+      },
+
+    {
+        "model": "agric.Location",
+        "pk": 3,
+        "fields": {
+          "name": "Abour"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 4,
+        "fields": {
+          "name": "Abugeri krom"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 5,
+        "fields": {
+          "name": "Adabraka"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 6,
+        "fields": {
+          "name": "Adaekro"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 6,
+        "fields": {
+          "name": "Adam akura"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 7,
+        "fields": {
+          "name": "Adeemmra dagati"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 8,
+        "fields": {
+          "name": "Adeemmra no. 1"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 9,
+        "fields": {
+          "name": "Adeemmra no. 2"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 10,
+        "fields": {
+          "name": "Adjei bula"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 11,
+        "fields": {
+          "name": "Adom"
+          
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 12,
+        "fields": {
+          "name": "Adongo akura"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 13,
+        "fields": {
+          "name": "Afrefreso"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 14,
+        "fields": {
+          "name": "Ahotor"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 15,
+        "fields": {
+          "name": "Akokoa"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 16,
+        "fields": {
+          "name": "Amanfrom"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 17,
+        "fields": {
+          "name": "Amantin"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 18,
+        "fields": {
+          "name": "Apesika grushie"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 19,
+        "fields": {
+          "name": "Apesika no. 1"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 20,
+        "fields": {
+          "name": "Arkyeramade"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 21,
+        "fields": {
+          "name": "Asanteboa"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 22,
+        "fields": {
+          "name": "Atebubu"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 23,
+        "fields": {
+          "name": "Beposo no. 1 & 2"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 24,
+        "fields": {
+          "name": "Bolga nkwanta"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 25,
+        "fields": {
+          "name": "Bolga-village"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 26,
+        "fields": {
+          "name": "Bompa"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 27,
+        "fields": {
+          "name": "Boniafo"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 28,
+        "fields": {
+          "name": "Dagati line"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 29,
+        "fields": {
+          "name": "Dagatiline"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 30,
+        "fields": {
+          "name": "Dobidi"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 31,
+        "fields": {
+          "name": "Duaboni no. 1"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 32,
+        "fields": {
+          "name": "Duaboni no. 1"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 33,
+        "fields": {
+          "name": "Duaboni no. 2"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 34,
+        "fields": {
+          "name": "Fakwasi"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 35,
+        "fields": {
+          "name": "Fanfour-komkomba"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 36,
+        "fields": {
+          "name": "Fante newtown"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 37,
+        "fields": {
+          "name": "Forty-four no. 1"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 38,
+        "fields": {
+          "name": "Forty-four no. 2"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 38,
+        "fields": {
+          "name": "Fourty – four"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 39,
+        "fields": {
+          "name": "Garadima"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 40,
+        "fields": {
+          "name": "Grumah line"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 41,
+        "fields": {
+          "name": "Grummah akura"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 42,
+        "fields": {
+          "name": "Jato zongo"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 43,
+        "fields": {
+          "name": "Kokofu"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 44,
+        "fields": {
+          "name": "Komkomba line"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 45,
+        "fields": {
+          "name": "Konkrompe"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 46,
+        "fields": {
+          "name": "Kumfia"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 47,
+        "fields": {
+          "name": "Kusasi akura"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 48,
+        "fields": {
+          "name": "Lailai"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 49,
+        "fields": {
+          "name": "Mem"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 50,
+        "fields": {
+          "name": "Mempeasem"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 51,
+        "fields": {
+          "name": "New konkrompe"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 52,
+        "fields": {
+          "name": "Nwominom komkombaline"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 53,
+        "fields": {
+          "name": "Nyomoase"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 54,
+        "fields": {
+          "name": "Old konkrompe"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 55,
+        "fields": {
+          "name": "Patuda"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 56,
+        "fields": {
+          "name": "Praprabon"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 57,
+        "fields": {
+          "name": "Primukyea"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 58,
+        "fields": {
+          "name": "Sampa"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 59,
+        "fields": {
+          "name": "Sanwakyi"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 60,
+        "fields": {
+          "name": "Seneso"
+        }
+    },
+    {
+        "model": "agric.Location",
+        "pk": 61,
+        "fields": {
+          "name": "Watro"
+        }
+    }
+    
+  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

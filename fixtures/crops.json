@@ -1,0 +1,116 @@
+[
+    {
+      "model": "agric.Crops",
+      "pk": 1,
+      "fields": {
+        "name": "Maize"
+        
+      }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 2,
+        "fields": {
+          "name": "Rice"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 3,
+        "fields": {
+          "name": "Millet"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 4,
+        "fields": {
+          "name": "Sorghum"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 5,
+        "fields": {
+          "name": "Groundnut"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 6,
+        "fields": {
+          "name": "Cowpea"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 7,
+        "fields": {
+          "name": "Garden Eggs"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 8,
+        "fields": {
+          "name": "Tomato"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 9,
+        "fields": {
+          "name": "Cassava"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 10,
+        "fields": {
+          "name": "Yam"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 11,
+        "fields": {
+          "name": "Pepper"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 12,
+        "fields": {
+          "name": "Sweet Potato"
+          
+        }
+    },
+    
+    {
+        "model": "agric.Crops",
+        "pk": 13,
+        "fields": {
+          "name": "Okro"
+          
+        }
+    },
+    {
+        "model": "agric.Crops",
+        "pk": 14,
+        "fields": {
+          "name": "Others"
+          
+        }
+    }
+
+  ]

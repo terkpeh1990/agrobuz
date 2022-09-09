@@ -1,0 +1,228 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+{% if bus.bio.surname %}{{ bus.bio.surname }}{% endif %} {% if bus.bio.first_name %} {{ bus.bio.first_name }}{% endif %}{% if bus.bio.other_name %}{{ bus.bio.other_name }}
+{% endif %}
+{% endblock head %}
+
+{% block breadcrumb %}
+      
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    
+    <li class="breadcrumb-item"><a href="{% url 'agric:manage_biodata' %}">Manage Bio Data</a></li>
+    <li class="breadcrumb-item active">{% if bus.bio.surname %}{{ bus.bio.surname }}{% endif %} {% if bus.bio.first_name %} {{ bus.bio.first_name }}{% endif %}{% if bus.bio.other_name %}{{ bus.bio.other_name }}
+        {% endif %}</li>
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="content ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle" src=" {% static 'dist/img/composer.jpeg' %}"
+                                alt="User profile picture">
+                        </div>
+            
+                        <h3 class="profile-username text-center">{% if bus.bio.surname %}{{ bus.bio.surname }}{% endif %} {% if bus.bio.first_name %} {{ bus.bio.first_name }}{% endif %}{% if bus.bio.other_name %}{{ bus.bio.other_name }}
+                            {% endif %}</h3>
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Date Of Birth</b> <a class="float-right">{{bus.bio.dob}}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Gender</b> <a class="float-right">{{bus.bio.sex}}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Marital Status</b> <a class="float-right">{{bus.bio.marital_status}}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Ghana Card No</b> <a class="float-right">{{bus.bio.valid_id}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            
+                <!-- About Me Box -->
+                <div class="card card-primary card-outline">
+                    
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                       
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+            
+                        <p class="text-muted">{{bus.bio.location}}</p>
+            
+                        <hr>
+                        <strong><i class="fas fa-phone mr-1"></i>Active Phone Number</strong>
+            
+                        <p class="text-muted">{{bus.bio.contact}}</p>
+            
+                        <hr>
+                        <strong><i class="fa fa-language mr-1"></i>Value Chain</strong>
+            
+                        <p class="text-muted">{{bus.bio.value_chain}}</p>
+            
+                        <hr>
+                        <strong><i class="fa fa-language mr-1"></i>Farm/Business</strong>
+            
+                        <p class="text-muted">{{bus.name}}</p>
+            
+                        <hr>
+            
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            
+            <div class="col-md-9 col-sm-12 novalidate">
+                
+                <div class="row">
+                            <div class="col-lg">
+                                <div class="card card-primary card-outline">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Land Information</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <form role="form" method="POST" enctype="multipart/form-data" novalidate>
+                                        {% csrf_token %}
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="form-group col-12 col-sm-12 col-md-4">
+                                                    {{ form.total_land_area_of_farm|as_crispy_field }}
+                                                </div>
+                                                <div class="form-group col-12 col-sm-12 col-md-4">
+                                                    {{ form.total_area_under_cultivation|as_crispy_field }}
+                                                </div>
+                                                <div class="form-group col-12 col-sm-12 col-md-4">
+                                                    {{ form.land_title_status|as_crispy_field }}
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <button type="submit" class="btn btn-md btn-outline-primary">Submit</button>
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col ">
+                                                </div>
+                                                <div class="form-group col float-left">
+                                                    <a class="btn btn-md btn-outline-info"href="{% url 'agric:create_business' bus.bio.id %}"><i class="fas fa-arrow-left"></i></a>
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </div> 
+                                        
+                                            
+                                    </form>
+
+                                    <br>
+                                    
+                                    {% if bu %}
+                                    <div class="m-4">
+                                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="example3" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+                            
+                                                                
+                                                                
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Total Land Area Of Farm</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Area Under Cultivation</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Title Status</th>
+                                                                
+                                    
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in bu %}
+                                                            
+                                                            <tr role="row" class="odd">
+                                                                
+                                                                
+                                                                <td>{{ a.total_land_area_of_farm}}</td>
+                                                                <td>{{ a.total_area_under_cultivation}}</td>
+                                                                <td>{{ a.land_title_status}}</td>
+                                                                
+                                                            
+                                                                
+                                                            </tr>
+                            
+                                                            {% endfor %}
+                            
+                                                        </tbody>
+                            
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="m-4">
+                                        <div class="jumbotron">
+                                            <div class="col-md-10 mx-auto">
+                                              <p class="d-flex justify-content-center"><b>No Land Information</b></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    
+                                        
+                                    {% endif %}
+                                        
+                                    
+                                    
+                                    </div>
+
+                                    
+                                </div>
+                </div>           
+            
+            </div>
+            
+        </div>
+    
+    </div>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

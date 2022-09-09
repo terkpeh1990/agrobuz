@@ -1,0 +1,20 @@
+[
+    {
+      "model": "agric.Sex",
+      "pk": 1,
+      "fields": {
+        "name": "Male"
+        
+      }
+    },
+    {
+        "model": "agric.Sex",
+        "pk": 2,
+        "fields": {
+          "name": "Female"
+          
+        }
+    }
+    
+    
+  ]

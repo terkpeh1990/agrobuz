@@ -1,0 +1,351 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+{{bus.name}}
+{% endblock head %}
+
+{% block breadcrumb %}
+
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+    <li class="breadcrumb-item"><a href="{% url 'agric:manage_business' %}">Manage Business</a></li>
+    <li class="breadcrumb-item active">{{bus.name}}
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="content ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+
+
+
+                <!-- About Me Box -->
+                <div class="card card-primary card-outline">
+
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Permit No.</strong>
+
+                        <p class="text-muted">{{bus.permit}}</p>
+
+                        <hr>
+
+
+                        <strong><i class="fas fa-phone mr-1"></i>Tin Number</strong>
+
+                        <p class="text-muted">{{bus.tin_number}}</p>
+
+                        <hr>
+                        <strong><i class="fa fa-language mr-1"></i>Value Chain</strong>
+
+                        <p class="text-muted">{{bus.value_chain.name}}</p>
+
+                        <hr>
+                        <strong><i class="fas fa-users mr-1"></i>Permanent Workers </strong>
+
+                        <p class="text-muted">{{bus.permanent_staff_no}}</p>
+
+                        <hr>
+                        <strong><i class="fas fa-users mr-1"></i>Casual Workers</strong>
+
+                        <p class="text-muted">{{bus.casual_staff_no}}</p>
+
+                        <hr>
+                        <strong><i class="fas fa-users mr-1"></i>Owners</strong>
+
+                        <p class="text-muted">
+                            {% if bus.bio.surname %}{{ bus.bio.surname }}{% endif %} {% if bus.bio.first_name %} {{ bus.bio.first_name }}{% endif %}{% if bus.bio.other_name %}{{ bus.bio.other_name }}
+                            {% endif %}   <br>
+                            {% for i in partners  %}
+                            {% if i.bio.surname %}{{ i.bio.surname }}{% endif %} {% if i.bio.first_name %} {{ i.bio.first_name }}{% endif %}{% if i.bio.other_name %}{{ i.bio.other_name }}
+                            {% endif %} <br>
+
+
+                            {% endfor %}
+                        </p>
+
+                        <hr>
+
+                        {% if value_chain.name == 'Commercial Farmer' %}
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>Land</strong>
+                        <p class="text-muted">Total Area:{{bus.total_land_area_of_farm}}</p> <br>
+                        <p class="text-muted">Cultivation Area:{{bus.total_area_under_cultivation}}</p> <br>
+                        <hr>
+
+                        {% endif %}
+
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>GPRS Location</strong>
+                        <p class="text-muted">{{bus.longitude }} , {{ bus.latitude}}</p> <br>
+
+                        <hr>
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>Audit Trial Event Status</strong>
+                        {% if bus.history_type == '~' %}
+                            <span class="badge badge-pill badge-warning">Updated</span>
+                            {% elif bus.history_type == '-' %}
+                            <span class="badge badge-pill badge-danger">Deleted</span>
+                            {% else %}
+                            <span class="badge badge-pill badge-success">Created</span>
+                        {% endif %}<br>
+
+                        <hr>
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i>Event Staff</strong>
+                        <p class="text-muted">{{bus.history_user.profile.name }}</p> <br>
+
+
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+            <div class="col-md-9 col-sm-12 novalidate">
+
+                <div class="row">
+                            <div class="col-lg">
+                                <div class="card card-primary card-outline">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Details</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    <br>
+                                    {% if crops %}
+                                    <h3 class="ml-4">Crop  Farm</h3>
+                                    <div class="m-4">
+                                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+
+                                                    <table id="example6" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+
+
+
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Name</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Size(In Acres)</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Current Yield</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">GPS location</th>
+
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in crops %}
+
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.crop.name}}</td>
+                                                                <td>{{ a.size}}</td>
+                                                                <td>{{ a.current_yields}}</td>
+                                                                <td>{{ a.longitude }} , {{ a.latitude}}</td>
+
+                                                            </tr>
+
+                                                            {% endfor %}
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endif %}
+                                    {% if animal %}
+                                    <h3 class="ml-4">Animal  Farm</h3>
+                                    <div class="m-4">
+                                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+
+                                                    <table id="example7" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+
+
+
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Name</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Number</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">GPS location</th>
+
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in animal %}
+
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.animal.name}}</td>
+                                                                <td>{{ a.number}}</td>
+                                                                <td>{{ a.longitude }} , {{ a.latitude}}</td>
+
+
+                                                            </tr>
+
+                                                            {% endfor %}
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endif %}
+                                    {% if lands %}
+                                    <h3 class="ml-4">Land  Information</h3>
+                                    <div class="m-4">
+                                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+
+                                                    <table id="example4" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+
+
+
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Total Farm Land</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Farm Land Under Cultivation</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Title Status</th>
+
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in lands %}
+
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.total_land_area_of_farm}}</td>
+                                                                <td>{{ a.total_area_under_cultivation}}</td>
+                                                                <td>{{ a.land_title_status}}</td>
+
+
+                                                            </tr>
+
+                                                            {% endfor %}
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+
+
+                                    {% if bu %}
+                                    <h3 class="ml-4">ISIC Code Information</h3>
+                                    <div class="m-4">
+                                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+
+                                                    <table id="example4" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+
+
+
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Code</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Description</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Sub Code</th>
+
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Sub Description</th>
+
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in bu %}
+
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.code.code}}</td>
+                                                                <td>{{ a.code.description}}</td>
+                                                                <td>{{ a.code.sub_code}}</td>
+                                                                <td>{{ a.code.sub_description}}</td>
+
+
+
+                                                            </tr>
+
+                                                            {% endfor %}
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endif %}
+
+
+
+
+
+
+
+                                    </div>
+
+
+                                </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

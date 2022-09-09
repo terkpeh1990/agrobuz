@@ -1,0 +1,251 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+{{association.name}}
+{% endblock head %}
+
+{% block breadcrumb %}
+      
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    
+    <li class="breadcrumb-item"><a href="{% url 'agric:manage_association' %}">Manage Associations/FBO/LBO</a></li>
+    <li class="breadcrumb-item active">{{association.name}}
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="content ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+            
+                <!-- About Me Box -->
+                <div class="card card-primary card-outline">
+                    
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        
+                        
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+            
+                        <p class="text-muted">{{association.location}}</p>
+            
+                        <hr>
+                       
+                       
+                        <strong><i class="fas fa-phone mr-1"></i>Active Phone Number</strong>
+            
+                        <p class="text-muted">{{association.contact}}</p>
+            
+                        <hr>
+                        <strong><i class="fa fa-language mr-1"></i>Value Chain</strong>
+            
+                        <p class="text-muted">{{association.value_chain}}</p>
+            
+                        <hr>
+                        <strong><i class="fas fa-users mr-1"></i>Total Males</strong>
+            
+                        <p class="text-muted">{{association.male_members}}</p>
+            
+                        <hr>
+                        <strong><i class="fas fa-users mr-1"></i>Total Females</strong>
+            
+                        <p class="text-muted">{{association.female_members}}</p>
+            
+                        <hr>
+            
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            
+            <div class="col-md-9 col-sm-12 novalidate">
+                
+                <div class="row">
+                            <div class="col-lg">
+                                <div class="card card-primary card-outline">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Association/FBO/LBO Members Information</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+                                    
+                                    <br>
+                                    
+                                    {% if association_executives %}
+                                    <div class="m-4">
+                                        <div id="example3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3>Executives</h3>
+                                                    <table id="example3" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+                            
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Person ID</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Name</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Contact</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Location</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="CSS grade: activate to sort column ascending">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in association_executives %}
+                                                            
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.bio.id}}</td>
+                                                                <td>
+                                                                    
+                                                                    {% if a.bio.surname %}
+                                                                        {{ a.bio.surname }}
+                                                                    {% endif %}
+
+                                                                    {% if a.bio.first_name %}
+                                                                        {{ a.bio.first_name }}
+                                                                    {% endif %}
+
+                                                                    {% if a.bio.other_name %}
+                                                                        {{ a.bio.other_name }}
+                                                                    {% endif %}
+                                                                </td>
+                                                                <td>{{ a.bio.contact}}</td>
+                                                                <td>{{ a.bio.location}}</td>
+                                                                
+                                                                
+                                                                
+                                                                <td>
+
+                                                                    <a class="btn btn-sm btn-outline-primary"
+                                                                        href="{% url 'agric:view_bio' a.bio.id %}">View</a>
+                                                                    
+                                                                </td>
+                                                            </tr>
+                            
+                                                            {% endfor %}
+                            
+                                                        </tbody>
+                            
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="m-4">
+                                        <div class="jumbotron">
+                                            <div class="col-md-10 mx-auto">
+                                              <p class="d-flex justify-content-center"><b>No Executive Information</b></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    {% endif %}
+
+                                    {% if association_members %}
+                                    <div class="m-4">
+                                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3>Members</h3>
+                                                    <table id="example2" class="table  table-striped table-hover" role="grid"
+                                                        aria-describedby="example2_info">
+                                                        <thead class="">
+                                                            <tr role="row">
+                            
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Person ID</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Name</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Contact</th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="Browser: activate to sort column ascending">Location</th>
+                                                                
+                                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                                                    aria-label="CSS grade: activate to sort column ascending">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% for a in association_members %}
+                                                            
+                                                            <tr role="row" class="odd">
+                                                                <td>{{ a.bio.id}}</td>
+                                                                <td>
+                                                                    
+                                                                    {% if a.bio.surname %}
+                                                                        {{ a.bio.surname }}
+                                                                    {% endif %}
+
+                                                                    {% if a.bio.first_name %}
+                                                                        {{ a.bio.first_name }}
+                                                                    {% endif %}
+
+                                                                    {% if a.bio.other_name %}
+                                                                        {{ a.bio.other_name }}
+                                                                    {% endif %}
+                                                                </td>
+                                                                <td>{{ a.bio.contact}}</td>
+                                                                <td>{{ a.bio.location}}</td>
+                                                                
+                                                                
+                                                                
+                                                                <td>
+
+                                                                    <a class="btn btn-sm btn-outline-primary"
+                                                                        href="{% url 'agric:view_bio' a.bio.id %}">View</a>
+                                                                    
+                                                                    
+
+                                                                </td>
+                                                            </tr>
+                            
+                                                            {% endfor %}
+                            
+                                                        </tbody>
+                            
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="m-4">
+                                        <div class="jumbotron">
+                                            <div class="col-md-10 mx-auto">
+                                              <p class="d-flex justify-content-center"><b>No Member Information</b></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    {% endif %}
+                                        
+                                    
+                                </div>
+                </div>           
+            
+            </div>
+            
+        </div>
+    
+    </div>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

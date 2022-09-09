@@ -1,0 +1,135 @@
+{% load static %}
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="{% url 'agric:home' %}" class="brand-link">
+    <img src="{% static 'dist/img/logs.png' %}" alt="AdminLTE Logo" class="brand-image  elevation-6"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light"> <b>  INFO SYS</b> </span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+
+
+        <li class="nav-item">
+          {% url 'agric:manage_biodata' as manage_biodata %}
+          {% url 'agric:create_bio_data' as create_bio_data %}
+          {% url 'agric:Update_bio_data' bio.id as Update_bio_data %}
+          {% url 'agric:view_bio' bio.id as view_bio %}
+
+          <a href="{{manage_biodata }}" class="nav-link {% if request.path == manage_biodata %} active {% endif %} {% if request.path == create_bio_data %} active {% endif %}{% if request.path == Update_bio_data %} active {% endif %}{% if request.path == view_bio %} active {% endif %}
+          ">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+             Bio Data
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          {% url 'agric:manage_business' as manage_business %}
+          {% url 'agric:view_business' bus.id as view_business %}
+          {% url 'agric:create_business' bio.id as create_business %}
+          {% url 'agric:update_business' a.id as update_business %}
+
+
+          <a href="{{manage_business}}" class="nav-link {% if request.path == manage_business %} active {% endif %} {% if request.path == view_business %} active {% endif %}{% if request.path == create_business %} active {% endif %}
+          {% if request.path == update_business %} active {% endif %} ">
+            <i class="nav-icon fas fa-shopping-cart"></i>
+            <p>
+             Business/Farms
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          {% url 'agric:agri_business_d' as agri_business_d %}
+
+
+          <a href="{{agri_business_d}}" class="nav-link {% if request.path == agri_business_d %} active {% endif %}
+           ">
+            <i class="nav-icon fas fa-shopping-cart"></i>
+            <p>
+             Agric-Based Business
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          {% url 'agric:manage_association' as manage_association %}
+          {% url 'agric:view_association' a.id as view_association %}
+          {% url 'agric:Update_association' a.id as Update_association %}
+          <a href="{{manage_association }}" class="nav-link {% if request.path == manage_association %} active {% endif %} {% if request.path == view_association %} active {% endif %}{% if request.path == Update_association %} active {% endif %}">
+            <i class="nav-icon fas fa-wrench"></i>
+            <p>
+             Association
+            </p>
+          </a>
+        </li>
+        {% for group in  request.user.groups.all %}
+        {% if group.name == 'sysadmin'  %}
+        <li class="nav-item">
+          {% url 'agric:manage_profiles' as manage_profiles %}
+          {% url 'agric:biotrail' as biotrail %}
+
+          <a href="{{manage_profiles }}" class="nav-link {% if request.path == manage_profiles %} active {% endif %}">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+             Manage Users
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          {% url 'agric:userlogs' as userlogs %}
+
+          <a href="{{ userlogs }}" class="nav-link {% if request.path == userlogs %} active {% endif %}">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+             Users Logs
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          {% url 'agric:biotrail' as biotrail %}
+
+          <a href="{{biotrail }}" class="nav-link {% if request.path == biotrail %} active {% endif %}">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+             Bio Data Audit Trail
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          {% url 'agric:businessaudittrail' as businessaudittrail %}
+
+          <a href="{{ businessaudittrail }}" class="nav-link {% if request.path == businessaudittrail %} active {% endif %}">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+             Business Audit Trail
+            </p>
+          </a>
+        </li>
+        {% endif  %}
+        {% endfor  %}
+
+
+        <br>
+        <hr>
+
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
+
+

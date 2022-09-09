@@ -1,0 +1,201 @@
+[
+    {
+      "model": "agric.Value_Chain",
+      "pk": 1,
+      "fields": {
+        "name": "Peasant Farmer"
+        
+      }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 2,
+        "fields": {
+          "name": "Commercial Farmer"
+          
+        }
+    },
+   
+    {
+        "model": "agric.Value_Chain",
+        "pk": 3,
+        "fields": {
+          "name": "Tractor Operators"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 4,
+        "fields": {
+          "name": "Input Dealers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 5,
+        "fields": {
+          "name": "Marketers/Aggregators"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 6,
+        "fields": {
+          "name": "Processors"
+          
+        }
+    },
+    
+    
+    {
+        "model": "agric.Value_Chain",
+        "pk": 7,
+        "fields": {
+          "name": "Transporters"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 8,
+        "fields": {
+          "name": "Consumers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 9,
+        "fields": {
+          "name": "Traders"
+          
+        }
+    },
+    
+    {
+        "model": "agric.Value_Chain",
+        "pk": 10,
+        "fields": {
+          "name": "HairDresser"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 11,
+        "fields": {
+          "name": "Wedding And Fabrication"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 11,
+        "fields": {
+          "name": "Auto Mechanics"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 12,
+        "fields": {
+          "name": "Carpentry"
+          
+        }
+    },
+   
+    {
+        "model": "agric.Value_Chain",
+        "pk": 13,
+        "fields": {
+          "name": "Fashion Designers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 14,
+        "fields": {
+          "name": "Barbers"
+          
+        }
+    },
+    
+    {
+        "model": "agric.Value_Chain",
+        "pk": 15,
+        "fields": {
+          "name": "Small Engine Mechanics"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 16,
+        "fields": {
+          "name": "Bee Keepers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 17,
+        "fields": {
+          "name": "Food Venders"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 18,
+        "fields": {
+          "name": "Drinking Spots"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 19,
+        "fields": {
+          "name": "Filling Station"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 20,
+        "fields": {
+          "name": "Bakers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 21,
+        "fields": {
+          "name": "Soap Makers"
+          
+        }
+    },
+    {
+        "model": "agric.Value_Chain",
+        "pk": 22,
+        "fields": {
+          "name": "Tv and Radio Mechanics"
+          
+        }
+    },
+    {
+      "model": "agric.Value_Chain",
+      "pk": 23,
+      "fields": {
+        "name": "Farmers"
+        
+      }
+  }
+    
+  ]
